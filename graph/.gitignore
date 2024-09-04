@@ -1,0 +1,11 @@
+# Ignore the build directory
+/build/
+
+# Ignore the install directory
+/install/
+
+# Ignore object files
+*.o
+
+# Ignore binary files
+findArticulationPoints
