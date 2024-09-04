@@ -1,0 +1,11 @@
+# Ignore the build directory and everything inside it
+/build/
+
+# Ignore the install directory and everything inside it
+/install/
+
+# Ignore the vscode directory and everything inside it
+.vscode
+
+# Ignore object files globally, just in case they appear outside build directory
+*.o
