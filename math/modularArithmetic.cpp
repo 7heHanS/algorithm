@@ -73,7 +73,7 @@ int main() {
     cout << "C(" << n << ", " << k << ") % " << mod << " is: " << binom_result << endl;
 
     // Example usage of lucas_theorem
-    // n is big, mod is small
+    // n is big, mod is small and prime
     // n = 1000, k = 300, mod = 13
     // C(1000, 300) % 13 using Lucas's Theorem is: 10
     cout << "Enter n, k and prime modulus to compute nCk % mod using Lucas's Theorem: ";
