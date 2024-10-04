@@ -73,6 +73,7 @@ public:
         adj[v].push_back(u);
     }
 
+    // 단절점 찾기
     void findArticulationPoints() {
         for (int i = 0; i < V; i++) {
             if (!visited[i]) {
