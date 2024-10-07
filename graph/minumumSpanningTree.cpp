@@ -43,6 +43,7 @@ struct DisjointSetUnion {
 
 // Kruskal 알고리즘: 모든 간선을 최소 비용으로 연결하는 최소 비용 신장 트리(Minimum Spanning Tree)를 찾는 알고리즘
 // 간선 중심 접근 방식, 간선 정렬 필요, 희소 그래프(간선의 수가 적은 경우)에 적합
+// 간선 정렬 후, union-find 활용하여 새로운 간선을 추가할 때 사이클이 생기지 않도록 함 (다른 집합에 속한 정점만 추가)
 // 시간 복잡도: O(ElogE)
 int kruskal(int n, vector<Edge>& edges) {
     sort(edges.begin(), edges.end());
@@ -60,6 +61,7 @@ int kruskal(int n, vector<Edge>& edges) {
 
 // Prim 알고리즘: 모든 정점을 최소 비용으로 연결하는 최소 비용 신장 트리(Minimum Spanning Tree)를 찾는 알고리즘
 // 정점 중심 접근 방식, 우선순위 큐 사용, 밀집 그래프(간선의 수가 많은 경우)에 적합
+// 임의의 정점에서 시작, PQ를 활용하여 새로운 정점을 추가할 때 최소 비용의 간선을 선택
 // 시간 복잡도: O(ElogV)
 int prim(int n, vector<Edge>& edges) {
     vector<vector<pair<int, int>>> adj(n);

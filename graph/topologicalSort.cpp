@@ -5,15 +5,18 @@
 
 using namespace std;
 
-// BFS 방식 (Kahn's Algorithm)
+// BFS 방식 (Kahn's Algorithm), 사이클 검출 가능
 vector<int> topologicalSortBFS(int n, const vector<vector<int>>& adj) {
     vector<int> in_degree(n, 0);
+
+    // 개별 정점 indegree 계산
     for (int u = 0; u < n; ++u) {
         for (int v : adj[u]) {
             ++in_degree[v];
         }
     }
 
+    // indegree가 0인 정점을 큐에 삽입
     queue<int> q;
     for (int i = 0; i < n; ++i) {
         if (in_degree[i] == 0) {
@@ -34,6 +37,8 @@ vector<int> topologicalSortBFS(int n, const vector<vector<int>>& adj) {
         }
     }
 
+    // 모든 정점을 방문하지 않았다면 사이클이 존재
+    // 사이클이 존재하면 topo_order.size()가 n보다 작다
     if (topo_order.size() != n) {
         throw runtime_error("Graph has a cycle, topological sort not possible");
     }
@@ -42,6 +47,7 @@ vector<int> topologicalSortBFS(int n, const vector<vector<int>>& adj) {
 }
 
 // DFS 방식
+// DFS 에서 나올 때, stack에 push 후 역순으로 출력하면 위상 정렬이 된다.
 void dfs(int u, const vector<vector<int>>& adj, vector<bool>& visited, stack<int>& st) {
     visited[u] = true;
     for (int v : adj[u]) {
