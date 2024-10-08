@@ -1,9 +1,8 @@
-#include <iostream>
-
+#include <bits/stdc++.h>
+#define fastio cin.tie(0)->sync_with_stdio(0)
 using namespace std;
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
+    fastio;
     return 0;
 }
