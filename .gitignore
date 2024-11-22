@@ -1,4 +1,2 @@
 # Ignore the vscode directory and everything inside it
 .vscode
-acmicpc
-leetcode
